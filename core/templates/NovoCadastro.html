@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block main %}
+<section>
+	<form name="cadastro" method="post">
+			<table class="campo">
+			<tr>
+				<td colspan="2"><h1> Novo cadastro</h1></td>
+			</tr>				
+				<tr>
+					<td align="left"><span>Email:</span></td>
+					<td align="left"><input type="email" name="Email" class="input"/></td>
+				</tr>				
+				<tr>
+					<td align="left"><span>Nome:</span></td>
+					<td align="left"><input type="text" name="Nome" class="input"/></td>
+				</tr>				
+				<tr>
+					<td align="left"><span>Sexo:</span></td>
+					<td align="left"><label><input type="radio" name="sexo" class="radio"/>Masculino</label><label><input type="radio" name="sexo" class="radio"/>Feminino</label></td>
+				</tr>
+				<tr>
+					<td align="left"><span>Nascimento:</span></td>
+					<td align="left"><input type="date" name="Nascimento" class="input"/></td>
+				</tr>							
+				<tr>
+					<td align="left"><span>RA:</span></td>
+					<td align="left"><input name="RA" class="input"/></td>
+				</td>				
+				<tr>
+					<td align="left"><span>Telefone:<span></td>
+					<td align="left"><input name="Telefone" class="input"/></td>
+				</tr>				
+				<tr>
+					<td align="left"><span>Curso:</span></td>
+					<td align="left">
+						<select>
+							<option>curso1</option>
+							<option>curso2</option>
+							<option>curso3</option>
+							<option>curso4</option>
+							<option>curso5</option>
+						</select>
+					</td>
+				</tr>							
+				<tr>
+					<td align="left"><span>Senha:</span></td>
+					<td align="left"><input type="password" name="Senha" class="input"/></td>
+				</tr>								
+				<tr>
+					<td align="left"><span>Repita a Senha:</span></td>
+					<td align="left"><input type="password" name="RaS" class="input"/></td>
+				</tr>								
+				<tr>
+					<td align="left"><span>Endereço:</span></td>
+					<td align="left"><input name="endereço" class="input"/></td>
+				</tr>				
+				<tr>
+				<td></td>
+				<td align="left"><button class="botao2" type="submit"/>Confirmar</button></td>
+			</table>
+		</form>	
+</section>
+
+{% endblock %}

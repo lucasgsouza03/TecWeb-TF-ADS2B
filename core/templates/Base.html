@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Faculdade Impacta</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	</head>
+	<body>
+
+
+		<header>
+			<a href="/" class="logo"><img src="{% static 'TecWeb/css/images/Header/menu/impacta_logo.png' %}" alt="Logo"></a>
+			<nav class='menu'>
+				<ul class="nav"> 
+				<li><a href="/">Home</a>
+				<li><a href="/cursos">Lista de Cursos</a> 
+				<li><a href="/detalhes">Detalhes dos Cursos</a> 
+				<li><a href="/disciplinas">Disciplinas</a>
+				<li><a href="/noticias">Noticias</a> 
+				 
+				</ul>
+				</li>
+			</ul>
+			</nav>
+				<table cellspacing="0" class="login">	
+					<tr>
+						<td align="left"><label for="usuario">Usuário:</label></td>
+						<td align="left"><label for="senha">Senha:</label></td>
+					</tr>
+					<tr>
+						<td align="left"><input name="usuario" id="usuario"/></td>
+						<td align="left"><input name="senha" type="password" id="senha"/></td>
+						<td align="left"><input type="submit" value="Entrar"></td>
+					</tr>
+					<tr>
+						<td align="left"><a href="/EsqueciSenha" class="login2">Esqueceu a senha?</a></td>
+						<td align="left"><a href="/NovoCadastro" class="login2">Criar conta</a></td>
+					</tr>
+						<td align="left">
+							<label class="container">
+							<input type="checkbox">Lembre-se de mim
+							<span class="checkmark"></span>
+						</td>
+					</label>
+				</table>
+		</header>
+		<main>
+        {% block main %}
+
+        {% endblock %}
+		</main>
+		<footer class="rodape">
+			<br>
+			© Impacta 2017. Todos os direitos reservados. Política de privacidade
+
+		</footer>
+
+	</body>
+</html>
+
+
+
