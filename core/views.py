@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from core.models import teste
 
 # Create your views here.
 
 def index(request):
-    contexto = {'nome'}
+    contexto = {'nome': teste.nome}
     return render(request, "index.html", contexto)
 def Contato(request):
     return render(request, "Contato.html")
