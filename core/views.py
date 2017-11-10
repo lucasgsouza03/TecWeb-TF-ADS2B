@@ -3,7 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    return render(request, "index.html")
+    contexto = {'nome'}
+    return render(request, "index.html", contexto)
 def Contato(request):
     return render(request, "Contato.html")
 def cursos(request):
