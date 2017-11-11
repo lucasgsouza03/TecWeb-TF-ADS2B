@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'Impacta.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': mysqlconndict['Database'],
+        'NAME': lmsimpacta,
         'USER': mysqlconndict['User Id'],
         'PASSWORD': mysqlconndict['Password'],
         'HOST': mysqlconndict['Data Source'].split(':')[0],
