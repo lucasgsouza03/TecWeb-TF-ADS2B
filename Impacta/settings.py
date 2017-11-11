@@ -84,8 +84,8 @@ DATABASES = {
         'NAME': 'localdb',
         'USER': 'azure',
         'PASSWORD': '6#vWHD_$',
-        'HOST': 127.0.0.1,
-        'PORT': 55802,
+        'HOST': '127.0.0.1',
+        'PORT': '55802',
     }
 }
 
