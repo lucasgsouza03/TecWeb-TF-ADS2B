@@ -58,9 +58,6 @@ class Curso(models.Model):
 
     descricao = models.TextField(blank=True)
 
-    def __str__(self):
-        return self.nome
-
 class Aluno(Usuario):
 
     curso = models.ForeignKey(

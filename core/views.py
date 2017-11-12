@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from core.models import teste
+from core.models import curso
 
 # Create your views here.
 
 def index(request):
-    contexto = {'nome':teste.objects.all()}
+    contexto = {'id':curso.nome}
     return render(request, "index.html", contexto)
 def Contato(request):
     return render(request, "Contato.html")
