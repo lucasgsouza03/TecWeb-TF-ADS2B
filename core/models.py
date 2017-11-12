@@ -63,3 +63,5 @@ class Aluno(Usuario):
     curso = models.ForeignKey(
         Curso
     )
+class teste(models.Model):
+    nome = models.CharField(max_length=100)
