@@ -1,11 +1,10 @@
 create database LMS_Impacta
-drop database LMS_Impacta
 use LMS_Impacta
 
 create table cadastro_aluno(
 id int not null
 ,nome varchar(200) not null
-,endereço varchar(200) not null
+,endereÃ§o varchar(200) not null
 ,email varchar(100) not null
 ,sexo char(20) not null
 ,dt_nascimento date not null
@@ -177,9 +176,3 @@ id int not null identity(1,1)
 go
 
 
-drop table Curso
-drop table GradeCurricular
-drop table Periodo
-drop table Disciplina
-drop table Aluno
-drop table Professor
