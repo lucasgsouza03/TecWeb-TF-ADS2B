@@ -4,7 +4,7 @@ from core.models import curso
 # Create your views here.
 
 def index(request):
-    contexto = {'id':curso.nome.all()}
+    contexto = {'id':curso.nome}
     return render(request, "index.html", contexto)
 def Contato(request):
     return render(request, "Contato.html")
