@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'Impacta.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-with open('../../../../data/mysql/MYSQLCONNSTR_localdb.txt') as arquivo:
+with open('\home\data\mysql\MYSQLCONNSTR_localdb.txt') as arquivo:
     linha = arquivo.read()
     lista = linha.split(';')
     x = dict(s.split('=',1) for s in lista)
