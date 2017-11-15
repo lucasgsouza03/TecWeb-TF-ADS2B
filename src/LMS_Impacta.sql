@@ -1,6 +1,3 @@
-user: admin
-senha: @teste123
-
 use localdb;
 
 create table cadastro_aluno(
