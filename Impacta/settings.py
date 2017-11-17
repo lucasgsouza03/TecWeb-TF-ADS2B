@@ -133,4 +133,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #login 
-AUTH_USER_MODEL = 'core.Usuario'
+#AUTH_USER_MODEL = 'core.Usuario'
