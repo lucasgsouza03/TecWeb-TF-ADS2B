@@ -5,19 +5,19 @@
 	<head>
 		<title>Faculdade Impacta</title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="estilo.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 	</head>
 	<body>
 		<header>
 			<div class="logodiv">
-				<a href="index_new.html"><img src="TecWeb/css/images/Header/menu/impacta_logo.png" class="logo" alt="logo"></a>
+				<a href="index.html"><img src="{% static 'TecWeb/css/images/Header/menu/impacta_logo.png' %}" class="logo" alt="logo"></a>
 			</div>
 			<nav class="menu">
 				<ul>
-					<li><a href="#">Home</a>
-					<li><a href="cursos.html">Lista de Cursos</a>
-					<li><a href="disciplinas.html">Disciplinas</a>
-					<li><a href="noticias.html">Noticias</a> 
+					<li><a href="/">Home</a>
+					<li><a href="/cursos">Lista de Cursos</a>
+					<li><a href="/disciplinas">Disciplinas</a>
+					<li><a href="/noticias">Noticias</a> 
 				</ul>
 			</nav>
 			<table cellspacing="0" class="login">
