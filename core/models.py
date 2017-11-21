@@ -65,4 +65,4 @@ class Aluno(Usuario):
         Curso
     )
     class meta:
-        db_table = "aluno"
+        db_table="aluno"
