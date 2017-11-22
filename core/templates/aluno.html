@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aluno</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type='text/css' href='/static/style.css' media="all"> 
+		{% extends 'base.html' %}
+				{% block title %}Login.{% endblock %}
+
+</head>
+<body>
+		{% block main %}
+		<h1>Perfil do Aluno</h1>
+		<form method="POST" action=" ">
+	            {% csrf_token %}
+
+				
+		</form>
+		{% endblock %}
+	</div> 
+
+</body>
+</html>
