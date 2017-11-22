@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'Impacta.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
+'''
 with open('\home\data\mysql\MYSQLCONNSTR_localdb.txt') as arquivo:
     linha = arquivo.read()
     lista = linha.split(';')
@@ -93,7 +93,7 @@ DATABASES = {
         'PORT': x['Data Source'].split(':')[1],
     }
 }
-
+'''
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
