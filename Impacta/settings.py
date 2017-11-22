@@ -134,3 +134,5 @@ STATIC_URL = '/static/'
 
 #login 
 AUTH_USER_MODEL = 'core.Usuario'
+LOGIN_REDIRECT_URL = 'aluno'
+LOGOUT_REDIRECT_URL = 'home'
