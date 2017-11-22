@@ -66,3 +66,7 @@ class Aluno(Usuario):
     )
     class meta:
         db_table="aluno"
+        
+class Professor(Usuario):
+    apelido = models.CharField(max_length=50)
+    celular = models.CharField(max_length=11)
