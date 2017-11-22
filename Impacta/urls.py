@@ -16,17 +16,21 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from core.views import *
+from django.contrib.auth.views import login,logout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^login/', login,{'template_name':'login.html'}, name='login'),
     url(r'^$', index),
-    url(r'^contato/', Contato),
-    url(r'^cursos/', cursos),
-    url(r'^detalhes/', detalhes),
-    url(r'^disciplinas/', disciplinas),
-    url(r'^EsqueciSenha/', EsqueciSenha),
-    url(r'^noticias/', noticias),
-    url(r'^NovaDisciplina/', NovaDisciplina),
-    url(r'^NovoCadastro/', NovoCadastro),
+    url(r'^index/', index, name='home'),
+    url(r'^contato/', Contato, name='contato'),
+    url(r'^cursos/', cursos, name='cursos'),
+    url(r'^detalhes/', detalhes, name='detalhes'),
+    url(r'^disciplinas/', disciplinas, name='disciplinas'),
+    url(r'^EsqueciSenha/', EsqueciSenha, name='senha'),
+    url(r'^noticias/', noticias, name='noticias'),
+    url(r'^NovaDisciplina/', NovaDisciplina, name='novadisciplina'),
+    url(r'^NovoCadastro/', NovoCadastro, name='novocadastro'),
+    url(r'^logout/', logout, name='logout'),
 
 ]
