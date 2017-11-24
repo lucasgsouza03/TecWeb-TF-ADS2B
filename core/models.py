@@ -64,6 +64,8 @@ class Aluno(Usuario):
     curso = models.ForeignKey(
         Curso
     )
+    def __str__(self):
+        return self.curso
     class meta:
         db_table="aluno"
         
