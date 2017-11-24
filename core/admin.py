@@ -1,5 +1,4 @@
 from django.contrib import admin
-'''
 from django.contrib.auth.admin import UserAdmin
 from core.models import Curso, Aluno, Professor
 from django import forms
@@ -76,4 +75,4 @@ class ProfessorAdmin(UserAdmin):
 admin.site.register(Aluno,AlunoAdmin)
 admin.site.register(Curso,CursoAdmin)
 admin.site.register(Professor,ProfessorAdmin)
-'''
+
