@@ -18,14 +18,22 @@
 					<li><a href="/cursos">Lista de Cursos</a>
 					<li><a href="/disciplinas">Disciplinas</a>
 					<li><a href="/noticias">Noticias</a> 
-					{% if not user.is_authenticated %}
-						<li><a class="link_nav" href="/login">Login</a></li>
-					{% else %}
-						<li>Olá {{ user }} </li>
-						<li><a class="link_nav" href="/logout">Logout</a></li>
-					
-					{% endif %}
 				</ul>
+				<div class="login">
+					{% if not user.is_authenticated %}
+					<button><a class="link_nav" href="/login">Login</a></button>
+				{% else %}
+					<span>Olá {{ user }} </span></br>
+					<button><a class="link_nav" href="/logout">Logout</a></button>
+					{% if user.perfil == 'A'%}
+						<button><a class="link_nav" href="/aluno">area aluno</a></button>
+					{% elif user.perfil == 'P' %}
+						<button><a class="link_nav" href="/professor">area professor</a></button>
+					{% else %}
+						<button><a class="link_nav" href="/admin">area coordenador</a></button>
+					{% endif %}
+				{% endif %}
+				</div>
 			</nav>
 		</header>
         {% block main %}

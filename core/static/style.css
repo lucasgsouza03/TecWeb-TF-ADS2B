@@ -2,32 +2,45 @@
 	box-sizing: border-box;
 }
 body{
-	background-color:#F5F5F5;
+	background-color: #F5F5F5;
 	margin:0px;
 }
 header{
 	background-image:url('TecWeb/css/images/Header/menu/fundomenu.png');
-	width: 100%;
+	width:100%;
 	height: 82px;
 	padding: 0.5%;
-	display:flex;
 	
-	}
+}
+/* LOGO */
+img.logo{
+	width: 90px;
+	height: 62px;
+	margin-left: 1%;
+	display: inline;
+}
+.logodiv{
+	display: inline;
+}
+/*MENU*/
 .menu{
-	font-family:Verdana;
-	width:55%;
-	margin-left: 5%;
+	margin-left: 2%;
+	display: inline;
 }
 ul{
 	position:relative;
 	padding:0;
-	display:flex; 
+	display: inline;
+	font-family:Verdana;
+	width:55%;
+
 	
 	 }
 ul li{
 	text-align: center;
 	list-style: none;
 	padding:4px 15px;
+	display: inline;
 }
 ul li a {
 	text-align: center;
@@ -45,24 +58,16 @@ ul li a:before{
 	height: 5px;
 	background: #00bcd4;
 	position: absolute;
-	top:120%;
+	top:90%;
 	left:0;
 	transition: .5s;
 }
 ul li:hover a:before{
-	width:80%;
+	width:90%;
 	display: block;
+}
 
-}
-/*LOGOMARCA*/
-.logo {
-	width: 6%;
-	height: 70px;
-	display: flex;
-	margin-left: 2%;
-	position:relative;
-	
-}
+/* LOGIN */
 input[name="usuario"], input[name="senha"]{
 	width:90%;
     border: 2px solid ;
@@ -83,25 +88,27 @@ input[type=button], input[type=submit], input[type=reset] {
 }
 .login{
 	height:70px;
-	width:30%;
-	font-size:0.71rem;
+	width:15%;
+	font-size:1.2rem;
 	font-family: Verdana;
 	color:#FFF;
 	text-shadow: 1px 1px 1px #000;
+	text-align: center;
 	font-weight: bold;
 	float: right;
-	margin-top:-5px;
+	display: inline;
 }
 a.login2{
 	color: #000;
 	text-decoration: none;
 	text-shadow: none;
+	display: inline;
 	
 }
 a.login2:hover{
 	color: #9C9C9C;
 	size: 1rem;
-	
+	display: inline;
 }
 .container {
   display: block;
@@ -117,49 +124,77 @@ a.login2:hover{
   top: 0;
   left: 0;
   height: 25px;
-  width: 25px;
-  
+  width: 25px; 
 }
-
 /* BANNER PROPAGANDA */
 .banner {
-width: 100%;
-height: 400px;
-margin-top: -16px;
-display: block;
+	width: 100%;
+	height: 400px;
+	display: block;
 }
-
-.box {
-background-color:#fff;
-width: 436px ;
-position:relative;
- }
-
-.box2 {
-background-color:#fff;
-width: 431px ;
-position:relative;
+.org{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
 }
 .content{
+	display: flex;
 	justify-content: space-around;
 }
 
-h2 {
-	font-family: Arial;
-	font-size: 0.8em;
-	color:.262626;
-	text-align: left;
-	position: relative;
-	text-transform: left;
+.box_style{
+	text-align: center;
+	border: 3px solid #c7c7c7;
+	background-color: #e3e3ee;
+}
+.index_box1{
+	width: 50%;
+	margin-top: 5%;
+ 	margin-bottom: 5%;
+	height: 200px;
+}
+.index_box2{
+	width: 90%;
+	padding-bottom: 2%;
+	margin-bottom: 2%;
+}
+.cont_text{
+	border: 1px solid;
+	width: 90%;
+	margin-left: 4%;
+	padding: 0.5%;
+	background-color: #fff;
+}
+.cont_text2{
+	border: 1px solid;
+	width: 32%;
+	font-size: 13px;
+	padding: 0.5%;
+	background-color: #fff;
+}
 
+.rodape{
+	font-family: Arial;
+	color: #FFF;
+	text-align: center;
+	background-image:url(TecWeb/css/images/Footer/rodape.png); 
+	width:100%;
+	height: 50px;
 
 }
 h1{
 	font-family: Helvetica;
 	font-size: 1.5em;
-	color:red;
+	color:#013d67;
 	text-align: center;
 	text-transform: capitalize;
+
+}
+h2 {
+	font-family: Arial;
+	font-size: 0.8em;
+	color:.262626;
+	text-align: left;
 
 }
 h3{
@@ -170,141 +205,3 @@ h3{
 	text-transform: capitalize;
 
 }
-.rodape{
-	font-family: Arial;
-	color: #FFF;
-	text-align: center;
-	background-image:url(TecWeb/css/images/Footer/rodape.png); 
-	width:100%;
-	height: 50px;
-	display:block;
-
-
-
-}
-table {
-
-	text-transform:	capitalize;
-	text-align: center;
-
-
-
-}
-
-.cursos{
-	background-image:url(TecWeb/fundocurso.png);
-	width:700px;
-	height: 152px;
-
-}
-.grade{
-	background-image:url(TecWeb/fundocurso.png);
-	width:700px;
-	height: 600px;
-}
-
-table.campo {
-    margin:1% auto;
-    width:400px;
-    background:#888;
-    position:relative;
-    border:2px solid #555;
-	color: #FFFFFF;
-	padding:0px;
-
-}
-table.campo table{
-	width:100%;
-	margin:0px;
-	padding:0px;
-}
-div.campo select{
-	width: 50%;
-	
-}
-table.campo td{
-	padding-bottom: 2%;
-	
-}
-table.campo h1{
-	color: #FFF;
-    border-bottom:2px solid #555;
-    border-top:2px solid #555; 
-	margin-top: 0px;
-	
-}
-table.campo input{
-    border: 2px solid ;
-	border-radius: 2px;
-	-webkit-transition: 0.5s;
-	
-}
-talbe.campo input:focus{
-	border: 2px solid #555;
-	
-}
-table.campo input[type=button], input[type=submit], input[type=reset] {
-	background-color: #c2c2a3;
-	border: outset 1px;
-	border-radius: 2px;
-	font-weight: bold;
-	
-@media only screen and (max-width: 768px)
-{
-header{
-display:inline;
-}
-
-.menu{
-width: 100%;
-}
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-section{border: solid px;}
