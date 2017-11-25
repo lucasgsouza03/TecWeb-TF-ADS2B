@@ -18,31 +18,15 @@
 					<li><a href="/cursos">Lista de Cursos</a>
 					<li><a href="/disciplinas">Disciplinas</a>
 					<li><a href="/noticias">Noticias</a> 
+					{% if not user.is_authenticated %}
+						<li><a class="link_nav" href="/login">Login</a></li>
+					{% else %}
+						<li>Olá {{ user }} </li>
+						<li><a class="link_nav" href="/logout">Logout</a></li>
+					
+					{% endif %}
 				</ul>
 			</nav>
-			<table cellspacing="0" class="login">
-				<tr>
-					<td align="left"><label for="usuario" id="usuario"/>Usuário:</label></td>
-					<td align="left"><label for="usuario" id="usuario"/>Senha:</label></td>
-				</tr>
-				<tr>
-					<td align="left"><input name="usuario" id="usuario"/></td>
-					<td align="left"><input name="senha" type="password" id="senha"/></td>
-					<td align="left"><input type="submit" value="Entrar"></td>
-				</tr>
-				<tr>
-					<td align="left"><a href="Esqueci a senha.html" class="login2">Esqueceu a senha?</a></td>
-					<td align="left"><a href="Novo Cadastro.html" class="login2">Criar conta</a></td>
-				</tr>
-				<tr>
-					<td align="left">
-						<label class="container">
-							<input type="checkbox">Lembre-se de mim
-							<span class="checkmark"></span>
-						</label>
-					</td>
-				</tr>
-			</table>
 		</header>
         {% block main %}
 

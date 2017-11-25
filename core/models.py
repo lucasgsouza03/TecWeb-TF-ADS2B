@@ -55,11 +55,20 @@ class Curso(models.Model):
     tipo = models.CharField(max_length=50,blank=True)
     carga_horaria = models.IntegerField(default=1000)
     ativo = models.BooleanField(default=True)
-
     descricao = models.TextField(blank=True)
+    class Meta:
+        db_table="curso"
+    def __str__(self):
+        return self.nome
 
 class Aluno(Usuario):
 
     curso = models.ForeignKey(
         Curso
     )
+    class meta:
+        db_table="aluno"
+        
+class Professor(Usuario):
+    apelido = models.CharField(max_length=50)
+    celular = models.CharField(max_length=11)
