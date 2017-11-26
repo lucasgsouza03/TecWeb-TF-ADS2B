@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from core.models import Curso, Aluno, Professor, GradeCurricular, Disciplina, Periodo, PeriodoDisciplina, DisciplinaOfertada, Turma
+from core.models import Curso, Aluno, Professor, GradeCurricular, Disciplina, Periodo, PeriodoDisciplina, DisciplinaOfertada, Turma, Matricula, CursoTurma, Questao, ArquivoQuestao
 
 from django import forms
 
@@ -73,8 +73,8 @@ class ProfessorAdmin(UserAdmin):
     filter_horizontal = ()
 
 class GradeCurricularAdmin(admin.ModelAdmin):
-    list_display = ('ano', 'curso', 'semestre')
-    list_filter = ('ano','semestre', 'curso')
+    list_display = ('ano', 'curso', 'semestre',)
+    list_filter = ('ano','semestre', 'curso',)
     ordering = ('ano',)
     
     
@@ -96,9 +96,24 @@ class DisciplinaOfertadaAdmin(admin.ModelAdmin):
     ordering = ('ano',)
    
 class TurmaAdmin(admin.ModelAdmin):
-    list_display = ('turno', 'ano', 'semestre')
-    list_filter = ('turno', 'ano', 'semestre')
-    ordering = ('turno', 'ano', 'semestre')
+    list_display = ('turno', 'ano', 'semestre',)
+    list_filter = ('turno', 'ano', 'semestre',)
+    ordering = ('turno', 'ano', 'semestre',)
+
+class QuestaoAdmin(admin.ModelAdmin):
+    list_display = ('numero', 'data_limite_entrega', 'descricao', 'data')
+    list_filter = ('numero', 'data_limite_entrega', 'descricao', 'data')
+    ordering = ('numero', 'data_limite_entrega', 'descricao', 'data')
+
+class ArquivoQuestaoAdmin(admin.ModelAdmin):
+    list_display = ('arquivo',)
+    list_filter = ('arquivo',)
+    ordering = ('arquivo',)
+
+class RespostaAdmin(admin.ModelAdmin):
+    list_display = ('data_avaliacao', 'nota', 'avaliacao', 'descricao', 'data_de_envio',)
+    list_filter = ('data_avaliacao', 'nota', 'avaliacao', 'descricao', 'data_de_envio',)
+    ordering = ('data_avaliacao', 'nota', 'avaliacao', 'descricao', 'data_de_envio',)
 
 
 # Register your models here.  
@@ -111,4 +126,8 @@ admin.site.register(Periodo,PeriodoAdmin)
 admin.site.register(PeriodoDisciplina)
 admin.site.register(DisciplinaOfertada, DisciplinaOfertadaAdmin)
 admin.site.register(Turma,TurmaAdmin)
+admin.site.register(Matricula)
+admin.site.register(CursoTurma)
+admin.site.register(Questao, QuestaoAdmin)
+admin.site.register(ArquivoQuestao,ArquivoQuestaoAdmin)
 
