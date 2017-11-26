@@ -68,10 +68,15 @@ class Aluno(Usuario):
     )
     class meta:
         db_table="aluno"
+    def __str__(self):
+        return self.nome
         
 class Professor(Usuario):
     apelido = models.CharField(max_length=50)
     celular = models.CharField(max_length=11)
+    
+    def __str__(self):
+        return self.nome
 class questao(models.Model):
 
     disciplina = models.CharField(max_length=240)
@@ -86,7 +91,6 @@ class questao(models.Model):
 class arquivo_questao(questao):
     
     arquivo = models.FileField(upload_to='arquivos/')
-
 
 class disciplina_ofertada(models.Model):
 
