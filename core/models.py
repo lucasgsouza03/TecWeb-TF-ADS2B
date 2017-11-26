@@ -46,7 +46,7 @@ class Usuario(AbstractBaseUser):
     def get_full_name(self):
         return self.nome
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nome
     
 class Curso(models.Model):
@@ -58,7 +58,7 @@ class Curso(models.Model):
     descricao = models.TextField(blank=True)
     class Meta:
         db_table="curso"
-    def __str__(self):
+    def __unicode__(self):
         return self.nome
 
 class Aluno(Usuario):
@@ -68,14 +68,14 @@ class Aluno(Usuario):
     )
     class meta:
         db_table="aluno"
-    def __str__(self):
+    def __unicode__(self):
         return self.nome
         
 class Professor(Usuario):
     apelido = models.CharField(max_length=50)
     celular = models.CharField(max_length=11)
     
-    def __str__(self):
+    def __unicode__(self):
         return self.nome
 class questao(models.Model):
 
