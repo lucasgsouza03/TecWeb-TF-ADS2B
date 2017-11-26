@@ -6,13 +6,11 @@
 </div>
 <div class="box2"> 
 <div id="Esqueci">
-	<h1>CONTATO</h1>
-	<form method="POST" action="">
+	<h1>Envia questão</h1>
+	<form method="POST" action="" enctype="multipart/form-data">
 		{% csrf_token %}
-		Email:<input name="email"/><br>
-		Nome:<input name="nome"/><br>
-		Assunto:<input name="assunto"/><br>
-		Mensagem:<textarea name="mensagem"></textarea><br>
+
+		{{ arq.as_p }}
 		<button class="botao2" type="submit" >Confirmar</button>
 	</form>
 </div>
