@@ -5,13 +5,9 @@ from django.contrib.auth import authenticate, login
 
 # Create your views here.
 
-def index(request):
-    def __unicode__(self):
-    	return unicode(self.user)	
+def index(request):	
     return render(request, "index.html")
 def Contato(request):
-    def __unicode__(self):
-    	return unicode(self.user)
     if request.POST:
         form = contato_forms(request.POST)
         if form.is_valid():
@@ -26,37 +22,21 @@ def Contato(request):
 	            }
     return render(request, "Contato.html", contexto)
 def cursos(request):
-    def __unicode__(self):
-    	return unicode(self.user)
     return render(request, "cursos.html")
 def detalhes(request):
-    def __unicode__(self):
-    	return unicode(self.user)
     return render(request, "detalhes.html")
 def EsqueciSenha(request):
-    def __unicode__(self):
-    	return unicode(self.user)
     return render(request, "EsqueciSenha.html")
 def noticias(request):
-    def __unicode__(self):
-    	return unicode(self.user)
     return render(request, "noticias.html")
 def NovaDisciplina(request):
-    def __unicode__(self):
-    	return unicode(self.user)
     return render(request, "NovaDisciplina.html")
 def NovoCadastro(request):
-    def __unicode__(self):
-    	return unicode(self.user)
     return render(request, "NovoCadastro.html")
 def disciplinas(request):
-    def __unicode__(self):
-    	return unicode(self.user)
     return render(request, "disciplinas.html")
 
 def login(request):
-    def __unicode__(self):
-    	return unicode(self.user)
     return render(request, "login.html")
 
 def checa_aluno(user):
@@ -66,8 +46,6 @@ def checa_professor(user):
      return user.perfil == 'P'
 
 def questao_forms(request):
-    def __unicode__(self):
-    	return unicode(self.user)
     if request.POST:
         arq = questao_arquivo(request.POST, request.FILES)
         if arq.is_valid():
