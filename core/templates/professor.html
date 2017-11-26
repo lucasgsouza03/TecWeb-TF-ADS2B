@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block main %}
+		<h1>Perfil do Professor</h1>
+        {% for disciplina in disciplinas %}
+            <div>
+                <h2> {{ disciplina.nome }} </h2>
+                <ul>
+                    {% for questao in questoes%}
+                        <li>{{ questao }}</li>
+                    {% empty %}
+                        <li>esta disciplina ainda não possui questões</li>
+                    {% endfor %}
+                </ul>
+                <p class="acoes"><a href="{% url 'questao_forms' %}">Adicionar questões</a><p>
+            </div>
+        {% endfor %}
+{% endblock %}

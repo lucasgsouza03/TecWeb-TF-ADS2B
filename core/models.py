@@ -46,7 +46,7 @@ class Usuario(AbstractBaseUser):
     def get_full_name(self):
         return self.nome
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nome
 
 class Curso(models.Model):
@@ -58,6 +58,8 @@ class Curso(models.Model):
     descricao = models.TextField(blank=True)
     class Meta:
         db_table="curso"
+    def __unicode__(self):
+        return self.nome
 
 class Aluno(Usuario):
 
@@ -66,3 +68,36 @@ class Aluno(Usuario):
     )
     class meta:
         db_table="aluno"
+    def __unicode__(self):
+        return self.nome
+        
+class Professor(Usuario):
+    apelido = models.CharField(max_length=50)
+    celular = models.CharField(max_length=11)
+    
+    def __unicode__(self):
+        return self.nome
+class questao(models.Model):
+
+    disciplina = models.CharField(max_length=240)
+    ano_ofertado = models.SmallIntegerField()
+    semestre_ofertado = models.CharField(max_length=1)
+    id_turma = models.CharField(max_length=1)
+    numero = models.IntegerField()
+    data_limite_entrega = models.DateField()
+    descricao = models.TextField()
+    data = models.DateField()
+
+class arquivo_questao(questao):
+    
+    arquivo = models.FileField(upload_to='arquivos/')
+
+class disciplina_ofertada(models.Model):
+
+    nome_disciplina = models.CharField(max_length=240)
+    ano = models.SmallIntegerField()
+    semestre = models.CharField(max_length=1)
+
+class turma(disciplina_ofertada):
+    turno = models.CharField(max_length=15)
+    ra_professor = models.IntegerField()

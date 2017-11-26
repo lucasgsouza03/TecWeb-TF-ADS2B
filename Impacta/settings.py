@@ -77,7 +77,6 @@ WSGI_APPLICATION = 'Impacta.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
 with open('\home\data\mysql\MYSQLCONNSTR_localdb.txt') as arquivo:
     linha = arquivo.read()
     lista = linha.split(';')
@@ -132,5 +131,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# FileUpload
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 #login 
 AUTH_USER_MODEL = 'core.Usuario'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+#e-mail
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'lmsimpacta@gmail.com'
+EMAIL_HOST_PASSWORD = '@impacta123'
+EMAIL_PORT = 587
