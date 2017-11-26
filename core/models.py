@@ -48,7 +48,7 @@ class Usuario(AbstractBaseUser):
 
     def __unicode__(self):
         return self.nome
-    
+
 class Curso(models.Model):
     sigla = models.CharField(max_length=5)
     nome = models.CharField(max_length=100)
