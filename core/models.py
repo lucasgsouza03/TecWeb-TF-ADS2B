@@ -81,8 +81,9 @@ class GradeCurricular(models.Model):
 
     ) 
 
-    def __int__(self):
-        return self.ano
+   
+    def __str__(self):
+        return "{}".format(self.ano)
 
         
 class Disciplina(models.Model):
@@ -90,13 +91,13 @@ class Disciplina(models.Model):
     carga_horaria = models.IntegerField(default=80)
     teoria = models.DecimalField(max_digits=3, decimal_places=0)
     pratica = models.DecimalField(max_digits=3, decimal_places=0)
-    ementa = models.TextField
-    competencias = models.TextField
-    habilidades = models.TextField
-    conteudo = models.TextField
-    bibliografia_basica = models.TextField
-    bibliografia_complementar = models.TextField
-
+    ementa = models.TextField()
+    competencias = models.TextField()
+    habilidades = models.TextField()
+    conteudo = models.TextField()
+    bibliografia_basica = models.TextField()
+    bibliografia_complementar = models.TextField()
+   
     def __str__(self):
         return self.nome
 
@@ -113,8 +114,9 @@ class Periodo(models.Model):
         Curso
     )
     
-    def __int__(self):
-        return self.numero
+  
+    def __str__(self):
+        return "{}".format(self.numero)
 
 class PeriodoDisciplina(models.Model):
     Periodo = models.ForeignKey(
@@ -122,12 +124,14 @@ class PeriodoDisciplina(models.Model):
         Periodo
 
     )
-    disciplina = models.ForeignKey(
+    Disciplina = models.ForeignKey(
 
         Disciplina
 
     )
 
+    def __str__(self):
+        return "{}".format(self.Periodo, self.Disciplina)
     
 class DisciplinaOfertada(models.Model):
     ano = models.SmallIntegerField(max_length=4)
@@ -138,10 +142,11 @@ class DisciplinaOfertada(models.Model):
 
     )
     
-    def __int__(self):
-        return self.ano
+    def __str__(self):
+        return "{}".format(self.ano)
 
 class Turma(models.Model):
+    turma = models.CharField(max_length=100, unique=True)
     turno = models.CharField(max_length=15)
     ano = models.SmallIntegerField()
     semestre = models.CharField(max_length=1)
@@ -157,10 +162,67 @@ class Turma(models.Model):
     )
 
     def __str__(self):
-        return self.turno
+        return self.turma
+
+class Matricula(models.Model):
+    aluno = models.ForeignKey(
+
+        Aluno
+
+    )
+    turma = models.ForeignKey(
+
+        Turma
+
+    )
+
+    def __str__(self):
+        return "{}".format(self.aluno, self.turma)
+
+class CursoTurma(models.Model):
+    curso = models.ForeignKey(
+
+        Curso
+
+    )
+    turma = models.ForeignKey(
+
+        Turma
+
+    ) 
+
+    def __str__(self):
+        return "{}".format(self.curso, self.turma)
+ 
+class Questao(models.Model):
+    numero = models.IntegerField()
+    data_limite_entrega = models.DateField()
+    descricao = models.TextField()
+    data = models.DateField()
+    turma = models.ForeignKey(
+
+        Turma
+
+    )
+
+    def __str__(self):
+        return "{}".format(self.numero)
+
+class ArquivoQuestao(models.Model):
+    arquivo = models.CharField(max_length=500)
+    questao = models.ForeignKey(
+
+        Questao
+
+      )
+
+    def __str__(self):
+        return self.arquivo
+
 
 class teste(models.Model):
     nome = models.CharField(max_length=100)
     def __str__(self):
-        return self.nomey
+        return self.nome
+
 
