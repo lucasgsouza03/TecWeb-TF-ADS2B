@@ -1,26 +1,52 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block main %}
-<br>
+	{% block main %}
+		<section>
+				<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+				<div class="slide">
+						
+						<img class="myslides" src="{% static 'TecWeb/css/images/slides/banner-3.png' %}" style="width:100%">
+						<img class="myslides" src="{% static 'TecWeb/css/images/slides/banner-ies.png' %}" style="width:100%">
+						<img class="myslides" src="{% static 'TecWeb/css/images/slides/banner.png' %}" style="width:100%">
+						
+						
+					  
+						<button class="prev" onclick="plusDivs(-1)">
+								<img class="buttons" src="{% static 'TecWeb/css/images/slides/setaesq.png' %}" style="width:100%">
+						</button>
+						<button class="next" onclick="plusDivs(1)">
+								<img class="buttons" src="{% static 'TecWeb/css/images/slides/setadir.png' %}" style="width:100%">
+						</button>
+					  </div>
+					  
+					  <script>
+					  var slideIndex = 1;
+					  showDivs(slideIndex);
+					  
+					  function plusDivs(n) {
+						showDivs(slideIndex += n);
+					  }
+					  
+					  function showDivs(n) {
+						var i;
+						var x = document.getElementsByClassName("myslides");
+						if (n > x.length) {slideIndex = 1}    
+						if (n < 1) {slideIndex = x.length}
+						for (i = 0; i < x.length; i++) {
+						   x[i].style.display = "none";  
+						}
+						x[slideIndex-1].style.display = "block";  
+					  }
+					  
+					  </script>
+						
 
-<div>
-	<img src="{% static 'TecWeb/css/images/cursos-online.jpg' %}" class="banner" alt="banner">
-</div>
+		</section>
+		<section class="box_style curso_box"> 
+			<h1>Noticias</h1>
+			{% for curso in cursos %}
+				<article class="curso_text">
 
-<br>
-<br>  
-
-<div class="box">
-<br>
-<center><img src="https://www.unochapeco.edu.br/static/data/portal/fotolog/640x480/136.jpg">
-
-<br>
-<h2>Alunos do Curso de Administração da Faculdade Impacta apresentam trabalho de conclusão de curso
-17 de novembro de 2016</h2>
-</div>
-
-<div class="linebox1"> 
-
-</div>
-
+			{% endfor %}
+		</section>
 {% endblock %}
