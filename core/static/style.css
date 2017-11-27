@@ -91,28 +91,40 @@ input[type=button], input[type=submit], input[type=reset] {
 }
 .login{
 	height:70px;
-	width:30%;
-	font-size:0.80rem;
-	font-family: Helvetica;
+	width:27%;
 	color:#FFF;
 	text-shadow: 1px 1px 1px #000;
 	float: right;
 	margin-top:-5px;
 	display: inline;
 }
-a.login2{
-	font-family: Arial, Helvetica, sans-serif;
-	color: #0a63b9;
-	text-decoration: none;
-	text-shadow: none;
-	display: inline;
-	
+.login2{
+	margin: 1% auto;
+	padding: 2%;
 }
-a.login2:hover{
-	color: #9C9C9C;
-	size: 1rem;
-	display: inline;
+.contato{
+	margin: 1% auto;
+	padding: 2%;
 }
+button{
+	background-color: #58798f;
+	border-radius: 8%;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+}
+button.login{
+	font-family: Times New Roman, serif;
+	font-size:1em;
+	margin: 5% auto;
+	margin-right: 5%;
+	display:inline;
+	height:30px;
+}
+button.submit{
+	font-family: Times New Roman, serif;
+	font-size:1em;
+}
+
 .container {
   display: block;
   position: relative;
@@ -149,7 +161,7 @@ a.login2:hover{
 .box_style{
 	text-align: center;
 	border: 1px solid #c7c7c7;
-	background-color: transparent;
+	background-color: #fff;
 }
 .index_box1{
 	width: 70%;

@@ -77,7 +77,7 @@ class Professor(Usuario):
     celular = models.CharField(max_length=11)
 
 class GradeCurricular(models.Model):
-    ano = models.SmallIntegerField(max_length=4)
+    ano = models.SmallIntegerField()
     semestre = models.CharField(max_length=1)
     curso = models.ForeignKey(
 
@@ -138,7 +138,7 @@ class PeriodoDisciplina(models.Model):
         return "{}".format(self.Periodo, self.Disciplina)
     
 class DisciplinaOfertada(models.Model):
-    ano = models.SmallIntegerField(max_length=4)
+    ano = models.SmallIntegerField()
     semestre = models.CharField(max_length=1)
     disciplina = models.ForeignKey(
 
@@ -219,7 +219,7 @@ class questao(models.Model):
         return "{}".format(self.numero)
 
 class ArquivoQuestao(models.Model):
-    arquivo = models.CharField(max_length=500)
+    arquivo = models.FileField(upload_to='arquivos/')
     questao = models.ForeignKey(
 
         questao

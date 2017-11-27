@@ -11,12 +11,22 @@
 <body>
 		{% block main %}
 		<h1>Login</h1>
-		<form method="POST" action=" ">
-				{% csrf_token %}
-				RA: <input name = "username" /><br>
-				Senha: <input type = "password" name = "password" /><br>
-				<input type='submit' value='Entrar' style="width: 60px;"/>
-		</form>
+		<section >
+			<form method="POST" action=" ">
+					{% csrf_token %}
+					<table class="box_style login2">
+						<tr>
+							<td>RA:</td> <td><input name = "username" /></td>
+						</tr>
+						<tr>
+							<td>Senha:</td> <td><input type = "password" name = "password" /></td>
+						</tr>
+						<tr>
+							<td><button type="submit" class="submit">entrar</button></td>
+						</tr>
+					</table>
+			</form>
+		</section>
 		{% endblock %}
 	</div> 
 

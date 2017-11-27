@@ -1,25 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 	{% block main %}
-<div>
+<section>
 	<img src="{% static 'TecWeb/css/images/cursos-online.jpg' %}" class="banner" alt="banner">
-</div>
-<div class="box2"> 
-<div id="Esqueci">
+</section>
+<section>
 	<h1>CONTATO</h1>
 	<form method="POST" action="">
 		{% csrf_token %}
-		Email:<input name="email"/><br>
-		Nome:<input name="nome"/><br>
-		Assunto:<input name="assunto"/><br>
-		Mensagem:<textarea name="mensagem"></textarea><br>
-		<button class="botao2" type="submit" >Confirmar</button>
+		<table class="box_style contato">
+			<tr>
+				<td>Email:</td><td><input name="email"/></td>
+			</tr>
+			<tr>
+				<td>Nome:</td><td><input name="nome"/><br></td>
+			</tr>
+			<tr>
+				<td>Assunto:</td><td><input name="assunto"/><br></td>
+			</tr>
+			<tr>
+				<td>Mensagem:</td><td><textarea name="mensagem"></textarea><br></td>
+			</tr>
+			<tr>
+				<td><button class="botao2" type="submit" >Confirmar</button></td>
+			</tr>
+		</table>
 	</form>
 </div>
-</div>
-<div class="linebox2">
-</div>
-
-
-
 {% endblock %}
