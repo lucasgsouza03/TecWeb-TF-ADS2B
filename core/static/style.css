@@ -1,4 +1,3 @@
-
 *{
 	box-sizing: border-box;
 }
@@ -7,17 +6,18 @@ body{
 	margin:0px;
 }
 header{
-	background-image:url('TecWeb/css/images/Header/menu/fundomenu.png');
+	background-color:#041e43;	
+	border: 1px;
 	width:100%;
-	height: 82px;
+	height: 84px;
 	padding: 0.5%;
 	
 }
 /* LOGO */
 img.logo{
-	width: 90px;
+	width: 13%;
 	height: 62px;
-	margin-left: 1%;
+	margin-left: 2%;
 	display: inline;
 }
 .logodiv{
@@ -25,14 +25,14 @@ img.logo{
 }
 /*MENU*/
 .menu{
-	margin-left: 2%;
+	margin-left: 15%;
 	display: inline;
 }
 ul{
 	position:relative;
 	padding:0;
 	display: inline;
-	font-family:Verdana;
+	font-family: Helvetica,sans-serif;;
 	width:55%;
 
 	
@@ -40,17 +40,18 @@ ul{
 ul li{
 	text-align: center;
 	list-style: none;
-	padding:4px 15px;
+	padding:2px 10px;
 	display: inline;
 }
 ul li a {
+	top: -35%;
+	font-family: Gotham HTF;
 	text-align: center;
 	text-decoration: none;
 	text-transform: capitalize;
 	font-size:0.8rem;
-	font-weight:bold;
 	position:relative;
-	color: #262626;
+	color: #FFFFFF;
 
 }
 ul li a:before{
@@ -59,7 +60,7 @@ ul li a:before{
 	height: 5px;
 	background: #00bcd4;
 	position: absolute;
-	top:90%;
+	top:100%;
 	left:0;
 	transition: .5s;
 }
@@ -71,8 +72,9 @@ ul li:hover a:before{
 /* LOGIN */
 input[name="usuario"], input[name="senha"]{
 	width:90%;
+	background-color:transparent;
     border: 2px solid ;
-	border-radius: 2px;
+	border-radius: 1px;
 	-webkit-transition: 0.5s;
 	
 }
@@ -81,26 +83,26 @@ input[name="usuario"]:focus, input[name="senha"]:focus{
 	
 }
 input[type=button], input[type=submit], input[type=reset] {
-	background-color: #c2c2a3;
-	border: outset 1px;
-	border-radius: 2px;
+	font-family:Helvetica;
+	background-color: #F5F5F5;
+	border: 2px;
 	width: 100%;
-	font-weight: bold;
+	
 }
 .login{
 	height:70px;
-	width:15%;
-	font-size:0.8rem;
-	font-family: Verdana;
+	width:30%;
+	font-size:0.80rem;
+	font-family: Helvetica;
 	color:#FFF;
 	text-shadow: 1px 1px 1px #000;
-	text-align: center;
-	font-weight: bold;
 	float: right;
+	margin-top:-5px;
 	display: inline;
 }
 a.login2{
-	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #0a63b9;
 	text-decoration: none;
 	text-shadow: none;
 	display: inline;
@@ -114,6 +116,7 @@ a.login2:hover{
 .container {
   display: block;
   position: relative;
+  left:150%;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -145,11 +148,11 @@ a.login2:hover{
 
 .box_style{
 	text-align: center;
-	border: 3px solid #c7c7c7;
-	background-color: #e3e3ee;
+	border: 1px solid #c7c7c7;
+	background-color: transparent;
 }
 .index_box1{
-	width: 50%;
+	width: 70%;
 	margin-top: 5%;
  	margin-bottom: 5%;
 	height: 200px;
@@ -160,25 +163,33 @@ a.login2:hover{
 	margin-bottom: 2%;
 }
 .cont_text{
-	border: 1px solid;
+	font-size: 0.91em;
 	width: 90%;
-	margin-left: 4%;
+	margin: 1% auto;
 	padding: 0.5%;
-	background-color: #fff;
+	background-color: transparent;
 }
 .cont_text2{
-	border: 1px solid;
 	width: 32%;
-	font-size: 13px;
+	font-size: 0.91em;
 	padding: 0.5%;
-	background-color: #fff;
+	background-color: transparent;
 }
-
+.curso_box{
+	width: 90%;
+	margin: 1% auto;
+}
+.curso_text{
+	width: 90%;
+	margin: 1% auto;
+	background-color:transparent;
+	text-align: left;
+}
 .rodape{
 	font-family: Arial;
 	color: #FFF;
 	text-align: center;
-	background-image:url(TecWeb/css/images/Footer/rodape.png); 
+	background-color:#041e43;
 	width:100%;
 	height: 50px;
 
@@ -186,272 +197,98 @@ a.login2:hover{
 h1{
 	font-family: Helvetica;
 	font-size: 1.5em;
-	color:#013d67;
+	color:#58798f;
 	text-align: center;
 	text-transform: capitalize;
 
 }
 h2 {
-	font-family: Arial;
-	font-size: 2em;
-	color:#262626;
-	text-align: left;
-
+	font-family: Gotham HTF;
+	font-size: 1.3em;
+	color:#fff;
+	text-align: center;
+	background-color: #041e43;
+	border-radius: 0px 0px 2px 2px;
 }
 h3{
 	font-family: Arial;
 	font-size: 0.6em;
 	color:black;
+	background-color:transparent
 	text-align: justify;
 	text-transform: capitalize;
-
-}
-=======
-*{
-	box-sizing: border-box;
-}
-body{
-	background-color:#F5F5F5;
-	margin:0px;
-}
-header{
-	background-image: url('TecWeb/css/images/Header/menu/fundomenu.png');
-	width: 100%;
-	height: 82px;
-	padding: 0.5%;
-	
-	}
-.menu{
-	display: inline;
-	margin-left: 2%;
-}
-ul{
-	position:relative;
-	padding:0;
-	display: inline;
-	font-family:Verdana;
-	width:55%;
-
-	
-	 }
-ul li{
-	text-align: center;
-	list-style: none;
-	padding:4px 15px;
-	display: inline;
-}
-ul li a {
-	text-align: center;
-	text-decoration: none;
-	text-transform: capitalize;
-	font-size:0.8rem;
-	font-weight:bold;
-	position:relative;
-	color: #262626;
-
-}
-ul li a:before{
-	content: '';
-	width:0;
-	height: 5px;
-	background: #00bcd4;
-	position: absolute;
-	top:120%;
-	left:0;
-	transition: .5s;
-}
-ul li:hover a:before{
-	width:80%;
-	display: block;
-
-}
-/*LOGOMARCA*/
-.logo {
-
-	margin-left: 1%;
-	position:relative;
-	display: inline;
-}
-img.logotipo{	
-	width: 5%;
-	height: 55px;
-	}
-	
-input[name="usuario"], input[name="senha"]{
-	width:90%;
-    border: 2px solid ;
 	border-radius: 2px;
-	-webkit-transition: 0.5s;
-	
 }
-input[name="usuario"]:focus, input[name="senha"]:focus{
-	border: 2px solid #555;
-	
-}
-input[type=button], input[type=submit], input[type=reset] {
-	background-color: #c2c2a3;
-	border: outset 1px;
-	border-radius: 2px;
-	width: 100%;
-	font-weight: bold;
-}
-.login{
-	height:70px;
-	width:30%;
-	font-size:0.71rem;
-	font-family: Verdana;
-	color:#FFF;
-	text-shadow: 1px 1px 1px #000;
-	font-weight: bold;
-	float: right;
-	margin-top:-5px;
-}
-a.login2{
-	color: #000;
-	text-decoration: none;
-	text-shadow: none;
-	
-}
-a.login2:hover{
-	color: #9C9C9C;
-	size: 1rem;
-	
-}
-.container {
-  display: block;
+
+
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
   position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.checkmark {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  
+  top: 40%;
+  background-color:transparent;
+  width: auto;
+  margin-top: -10%;
+  transition: 0.6s ease;
+  border-color:transparent;
 }
 
-/* BANNER PROPAGANDA */
-.banner {
-width: 100%;
-height: 400px;
-
-}
-.caixa{width:40%;float:left;}
-.caixa2{width:40%;float:right;}
-
-h2 {
-	font-family: Arial;
-	font-size: 0.8em;
-	color:.262626;
-	text-align: left;
-
-}
-h1{
-	font-family: Helvetica;
-	font-size: 1.5em;
-	color:red;
-	text-align: center;
-	text-transform: capitalize;
-
-}
-h3{
-	font-family: Arial;
-	font-size: 0.6em;
-	color:black;
-	text-align: justify;
-	text-transform: capitalize;
-
-}
-.rodape{
-	font-family: Arial;
-	color: #FFF;
-	text-align: center;
-	background-image:url(TecWeb/css/images/Footer/rodape.png); 
-	width:100%;
-	height: 50px;
-
-}
-table {
-
-	text-transform:	capitalize;
-	text-align: center;
-
-
+/* Position the "next button" to the right */
+.next {
+  right: 0;
 
 }
 
-.cursos{
-	background-image:url(TecWeb/fundocurso.png);
-	width:700px;
-	height: 152px;
-
-}
-.grade{
-	background-image:url(TecWeb/fundocurso.png);
-	width:700px;
-	height: 600px;
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 
-table.campo {
-    margin:1% auto;
-    width:400px;
-    background:#888;
-    position:relative;
-    border:2px solid #555;
-	color: #FFFFFF;
-	padding:0px;
+.table{
+	border: 1px solid;
+}
 
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
-table.campo table{
-	width:100%;
-	margin:0px;
-	padding:0px;
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
-div.campo select{
-	width: 50%;
-	
+
+.t {
+	margin-left:10%;
+	margin-top:5%;
+	cursor: pointer;
+	padding: 3px;
+	border-radius: 50%;
 }
-table.campo td{
-	padding-bottom: 2%;
-	
-}
-table.campo h1{
-	color: #FFF;
-    border-bottom:2px solid #555;
-    border-top:2px solid #555; 
-	margin-top: 0px;
-	
-}
-table.campo input{
-    border: 2px solid ;
-	border-radius: 2px;
-	-webkit-transition: 0.5s;
-	
-}
-talbe.campo input:focus{
-	border: 2px solid #555;
-	
-}
-table.campo input[type=button], input[type=submit], input[type=reset] {
-	background-color: #c2c2a3;
-	border: outset 1px;
-	border-radius: 2px;
-	font-weight: bold;
-	
-/*@media only screen and (max-width: 768px)
-{
-header{
-}
+
+@media all and (max-width: 768px){
+	header{
+			display:inline;
+	}
 
 .menu{
-width: 100%;
+	width: 100%;
 }
 
-}
-*/
+}section{border: solid px;}
+
 
