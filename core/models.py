@@ -198,12 +198,7 @@ class CursoTurma(models.Model):
     def __str__(self):
         return "{}".format(self.curso, self.turma)
  
-class Questao(models.Model):
-    class meta:
-        db_table="aluno"
-    def __unicode__(self):
-        return self.nome
-        
+
 class questao(models.Model):
 
     disciplina = models.CharField(max_length=240)
@@ -227,7 +222,7 @@ class ArquivoQuestao(models.Model):
     arquivo = models.CharField(max_length=500)
     questao = models.ForeignKey(
 
-        Questao
+        questao
 
       )
 

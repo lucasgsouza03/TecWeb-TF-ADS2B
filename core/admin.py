@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from core.models import Curso, Aluno, Professor, GradeCurricular, Disciplina, Periodo, PeriodoDisciplina, DisciplinaOfertada, Turma, Matricula, CursoTurma, Questao, ArquivoQuestao
+from core.models import Curso, Aluno, Professor, GradeCurricular, Disciplina, Periodo, PeriodoDisciplina, DisciplinaOfertada, Turma, Matricula, CursoTurma, questao, ArquivoQuestao
 from django import forms
 
 class NovoAlunoForm(forms.ModelForm):
@@ -128,5 +128,5 @@ admin.site.register(DisciplinaOfertada, DisciplinaOfertadaAdmin)
 admin.site.register(Turma,TurmaAdmin)
 admin.site.register(Matricula)
 admin.site.register(CursoTurma)
-admin.site.register(Questao, QuestaoAdmin)
+admin.site.register(questao, QuestaoAdmin)
 admin.site.register(ArquivoQuestao,ArquivoQuestaoAdmin)

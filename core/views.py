@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required, user_passes_tes
+from django.contrib.auth.decorators import login_required, user_passes_test
 from core.forms import contato_forms, questao_arquivo
 
 # Create your views here.

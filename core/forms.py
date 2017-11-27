@@ -1,7 +1,7 @@
 from django import forms
 from django.core.mail import send_mail
 from Impacta.settings import EMAIL_HOST_USER
-from core.models import questao, arquivo_questao
+from core.models import questao, ArquivoQuestao
 
 
 class contato_forms(forms.Form):
@@ -17,5 +17,5 @@ class contato_forms(forms.Form):
 
 class questao_arquivo(forms.ModelForm):
     class Meta:
-        model = arquivo_questao
+        model = ArquivoQuestao
         fields = "__all__"
