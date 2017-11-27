@@ -46,7 +46,7 @@ class Usuario(AbstractBaseUser):
     def get_full_name(self):
         return self.nome
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nome
 
 class Curso(models.Model):
@@ -57,6 +57,11 @@ class Curso(models.Model):
     ativo = models.BooleanField(default=True)
 
     descricao = models.TextField(blank=True)
+    
+    class Meta:
+        db_table="curso"
+    def __unicode__(self):
+        return self.nome
 
     def __str__(self):
         return self.nome
@@ -65,8 +70,7 @@ class Aluno(Usuario):
 
     curso = models.ForeignKey(
         Curso
-    )
-    
+    )    
 
 class Professor(Usuario):
     apelido = models.CharField(max_length=50)
@@ -195,6 +199,17 @@ class CursoTurma(models.Model):
         return "{}".format(self.curso, self.turma)
  
 class Questao(models.Model):
+    class meta:
+        db_table="aluno"
+    def __unicode__(self):
+        return self.nome
+        
+class questao(models.Model):
+
+    disciplina = models.CharField(max_length=240)
+    ano_ofertado = models.SmallIntegerField()
+    semestre_ofertado = models.CharField(max_length=1)
+    id_turma = models.CharField(max_length=1)
     numero = models.IntegerField()
     data_limite_entrega = models.DateField()
     descricao = models.TextField()
@@ -218,11 +233,3 @@ class ArquivoQuestao(models.Model):
 
     def __str__(self):
         return self.arquivo
-
-
-class teste(models.Model):
-    nome = models.CharField(max_length=100)
-    def __str__(self):
-        return self.nome
-
-

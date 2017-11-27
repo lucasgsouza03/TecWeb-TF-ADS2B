@@ -4,38 +4,41 @@
 <html lang="pt-br">
 	<head>
 		<title>Faculdade Impacta</title>
-		<meta charset="utf-8">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+		<link rel="stylesheet" media="only screen and (max-width: 400px)" href="{% static 'mobile.css' %}">
 	</head>
 	<body>
-
-
 		<header>
-			<a href="/" class="logo"><img src="{% static 'TecWeb/css/images/Header/menu/impacta_logo.png' %}" alt="Logo"></a>
-			<nav class='menu'>
-				<ul class="nav"> 
-				<li><a href="/">Home</a>
-				<li><a href="/cursos">Lista de Cursos</a> 
-				<li><a href="/detalhes">Detalhes dos Cursos</a> 
-				<li><a href="/disciplinas">Disciplinas</a>
-				<li><a href="/noticias">Noticias</a> 
-				
-				{% if not user.is_authenticated %}
-					<li><a class="link_nav" href="/login">Login</a></li>
-				{% else %}
-					<li>Olá</li>
-					<li><a class="link_nav" href="/logout">Logout</a></li>
-				
-				{% endif %}
-				 
+
+			<div class="logodiv">
+				<a href="/"><img src="{% static 'TecWeb/css/images/Header/menu/impacta_logo.png' %}" class="logo" alt="logo"></a>
+			</div>
+			<nav class="menu">
+				<ul>
+					<li><a href="/">Home</a>
+					<li><a href="/cursos">Lista de Cursos</a>
+					<li><a href="/disciplinas">Disciplinas</a>
+					<li><a href="/noticias">Noticias</a> 
 				</ul>
-				</li>
-			</ul>
+				<div class="login">
+					{% if not user.is_authenticated %}
+					<a class="link_nav" href="/login"><button>Login</button></a>
+					{% else %}
+					Olá {{ user.nome }}</br>
+					<a class="link_nav" href="/logout"><button>Logout</button></a>
+					{% if user.perfil == 'A'%}
+						<a class="link_nav" href="/aluno"><button>area aluno</button></a>
+					{% elif user.perfil == 'P' %}
+						<a class="link_nav" href="/professor"><button>area professor</button></a>
+					{% else %}
+						<a class="link_nav" href="/admin"><button>area coordenador</button></a>
+					{% endif %}
+				{% endif %}
+				</div>
 			</nav>
-				 
-								
 		</header>
-		<main>
         {% block main %}
 
         {% endblock %}
