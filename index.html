@@ -1,0 +1,74 @@
+{% extends 'base.html' %} 
+{% load static %}
+	{% block main %}
+	<section>
+			<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+			<div class="slide">
+					
+					<img class="myslides" src="{% static 'TecWeb/css/images/slides/banner-3.png' %}" style="width:100%">
+					<img class="myslides" src="{% static 'TecWeb/css/images/slides/banner-ies.png' %}" style="width:100%">
+					<img class="myslides" src="{% static 'TecWeb/css/images/slides/banner.png' %}" style="width:100%">
+					
+					
+				  
+					<button class="prev" onclick="plusDivs(-1)">
+							<img class="buttons" src="{% static 'TecWeb/css/images/slides/setaesq.png' %}" style="width:100%">
+					</button>
+					<button class="next" onclick="plusDivs(1)">
+							<img class="buttons" src="{% static 'TecWeb/css/images/slides/setadir.png' %}" style="width:100%">
+					</button>
+				  </div>
+				  
+				  <script>
+				  var slideIndex = 1;
+				  showDivs(slideIndex);
+				  
+				  function plusDivs(n) {
+					showDivs(slideIndex += n);
+				  }
+				  
+				  function showDivs(n) {
+					var i;
+					var x = document.getElementsByClassName("myslides");
+					if (n > x.length) {slideIndex = 1}    
+					if (n < 1) {slideIndex = x.length}
+					for (i = 0; i < x.length; i++) {
+					   x[i].style.display = "none";  
+					}
+					x[slideIndex-1].style.display = "block";  
+				  }
+				  
+				  </script>
+					
+
+	</section>
+	<img src="{% static 'TecWeb/css/images/Header/t1.png' %}" class="t" alt="t1">
+	<img src="{% static 'TecWeb/css/images/Header/t2.png' %}" class="t" alt="t2">
+	<img src="{% static 'TecWeb/css/images/Header/t3.png' %}" class="t" alt="t3">
+	<div class="org">
+		<section class="index_box1 box_style">
+			<h1>Sobre</h1>
+			<article class="cont_text">
+				<p>A Faculdade Impacta Tecnologia nasceu da percepção de um Grupo, que desde 1998 é referência em TI, Gestão e Design, para suprir a falta de mão de obra especializada do mercado de tecnologia e oferecer uma formação completa e multidisciplinar aos alunos.</p>
+			</article>
+		</section>
+		<section class="index_box2 box_style">
+			<h1>Comentários</h1>
+			<div class="content">
+				<article class="cont_text2">
+					<p>"Gostei muito de estudar na Faculdade Impacta, além de ficar totalmente envolvido com diversas áreas da tecnogia, ainda podemos jogar um ping-pong no intervalo."</p>
+					<p style="text-align: left; magin-left: 1%;">- Ping Ong, 20 anos<br>Aluno do curso de Análise e Desenvolvimento de Sistemas</p>
+				</article>
+				<article class="cont_text2">
+					<p>"A Faculdade Impacta tem parcerias bem legais com diversas empresas da área de tecnologia. E isso ajuda muito a ingressar na área."</p>
+					<p style="text-align: left; magin-left: 1%;">- João Cleto, 27 anos<br>Aluno do curso de Banco de Dados</p>
+				</article>
+				<article class="cont_text2">
+					<p>"A Faculdade Impacta apoia e trabalha para o desenvolvimento da área de tecnologia, por isso incentiva vários projetos orientados por professores. Muito bom contar com esse tipo de apoio."</p>
+					<p style="text-align: left; magin-left: 1%;">- Astolpho Bartholomeu Mendes, 30 anos<br>Aluno do curso de Análise e Desenvolvimento de Sistemas</p>
+				</article>
+			</div>
+		</section>
+	</div>
+	{% endblock %}
+
