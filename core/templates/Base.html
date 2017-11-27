@@ -5,12 +5,14 @@
 	<head>
 		<title>Faculdade Impacta</title>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+		<link rel="stylesheet" media="only screen and (max-width: 400px)" href="{% static 'mobile.css' %}">
 	</head>
 	<body>
 		<header>
 			<div class="logodiv">
-				<a href="index.html"><img src="{% static 'TecWeb/css/images/Header/menu/impacta_logo.png' %}" class="logo" alt="logo"></a>
+				<a href="/"><img src="{% static 'TecWeb/css/images/Header/menu/impacta_logo.png' %}" class="logo" alt="logo"></a>
 			</div>
 			<nav class="menu">
 				<ul>
