@@ -1,9 +1,50 @@
 {% extends 'base.html' %} 
 {% load static %}
 	{% block main %}
-	<section name="banner">
-		<img src="{% static 'TecWeb/css/images/cursos-online.jpg' %}" class="banner" alt="banner">
+	<section>
+			<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+			<div class="slide">
+					
+					<img class="myslides" src="{% static 'TecWeb/css/images/slides/banner-3.png' %}" style="width:100%">
+					<img class="myslides" src="{% static 'TecWeb/css/images/slides/banner-ies.png' %}" style="width:100%">
+					<img class="myslides" src="{% static 'TecWeb/css/images/slides/banner.png' %}" style="width:100%">
+					
+					
+				  
+					<button class="prev" onclick="plusDivs(-1)">
+							<img class="buttons" src="{% static 'TecWeb/css/images/slides/setaesq.png' %}" style="width:100%">
+					</button>
+					<button class="next" onclick="plusDivs(1)">
+							<img class="buttons" src="{% static 'TecWeb/css/images/slides/setadir.png' %}" style="width:100%">
+					</button>
+				  </div>
+				  
+				  <script>
+				  var slideIndex = 1;
+				  showDivs(slideIndex);
+				  
+				  function plusDivs(n) {
+					showDivs(slideIndex += n);
+				  }
+				  
+				  function showDivs(n) {
+					var i;
+					var x = document.getElementsByClassName("myslides");
+					if (n > x.length) {slideIndex = 1}    
+					if (n < 1) {slideIndex = x.length}
+					for (i = 0; i < x.length; i++) {
+					   x[i].style.display = "none";  
+					}
+					x[slideIndex-1].style.display = "block";  
+				  }
+				  
+				  </script>
+					
+
 	</section>
+	<img src="{% static 'TecWeb/css/images/Header/t1.png' %}" class="t" alt="t1">
+	<img src="{% static 'TecWeb/css/images/Header/t2.png' %}" class="t" alt="t2">
+	<img src="{% static 'TecWeb/css/images/Header/t3.png' %}" class="t" alt="t3">
 	<div class="org">
 		<section class="index_box1 box_style">
 			<h1>Sobre</h1>
