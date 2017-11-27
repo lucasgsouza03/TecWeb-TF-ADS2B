@@ -46,7 +46,7 @@ class Usuario(AbstractBaseUser):
     def get_full_name(self):
         return self.nome
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nome
 
 class Curso(models.Model):
@@ -60,9 +60,6 @@ class Curso(models.Model):
     
     class Meta:
         db_table="curso"
-    def __unicode__(self):
-        return self.nome
-
     def __str__(self):
         return self.nome
     
