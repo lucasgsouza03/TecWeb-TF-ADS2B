@@ -77,21 +77,19 @@ WSGI_APPLICATION = 'Impacta.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-'''
 with open('\home\data\mysql\MYSQLCONNSTR_localdb.txt') as arquivo:
     linha = arquivo.read()
     lista = linha.split(';')
     x = dict(s.split('=',1) for s in lista)
-'''
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'localdb',
-        'USER': 'root',
-        'PASSWORD': 'Z3ld4100%',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': x['Database'],
+        'USER': x['User Id'],
+        'PASSWORD': x['Password'],
+        'HOST': x['Data Source'].split(':')[0],
+        'PORT': x['Data Source'].split(':')[1],
     }
 }
 
