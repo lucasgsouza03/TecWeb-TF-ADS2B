@@ -35,6 +35,7 @@ urlpatterns = [
     url(r'^aluno/$', aluno, name='aluno'),
     url(r'^professor/$', professor, name='professor'),
     url(r'^professor/questao', questao_forms, name='questao_forms'),
+
 ]
 
 #if settings.DEBUG:

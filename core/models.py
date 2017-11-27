@@ -55,28 +55,155 @@ class Curso(models.Model):
     tipo = models.CharField(max_length=50,blank=True)
     carga_horaria = models.IntegerField(default=1000)
     ativo = models.BooleanField(default=True)
+
     descricao = models.TextField(blank=True)
+    
     class Meta:
         db_table="curso"
     def __unicode__(self):
         return self.nome
 
+    def __str__(self):
+        return self.nome
+    
 class Aluno(Usuario):
 
     curso = models.ForeignKey(
         Curso
+    )    
+
+class Professor(Usuario):
+    apelido = models.CharField(max_length=50)
+    celular = models.CharField(max_length=11)
+
+class GradeCurricular(models.Model):
+    ano = models.SmallIntegerField(max_length=4)
+    semestre = models.CharField(max_length=1)
+    curso = models.ForeignKey(
+
+        Curso
+
+    ) 
+
+   
+    def __str__(self):
+        return "{}".format(self.ano)
+
+        
+class Disciplina(models.Model):
+    nome = models.CharField(max_length=240)
+    carga_horaria = models.IntegerField(default=80)
+    teoria = models.DecimalField(max_digits=3, decimal_places=0)
+    pratica = models.DecimalField(max_digits=3, decimal_places=0)
+    ementa = models.TextField()
+    competencias = models.TextField()
+    habilidades = models.TextField()
+    conteudo = models.TextField()
+    bibliografia_basica = models.TextField()
+    bibliografia_complementar = models.TextField()
+   
+    def __str__(self):
+        return self.nome
+
+class Periodo(models.Model):
+    numero = models.SmallIntegerField(unique=True)
+    gradecurricular = models.ForeignKey(
+
+        GradeCurricular
+
     )
+    
+    curso = models.ForeignKey(
+
+        Curso
+    )
+    
+  
+    def __str__(self):
+        return "{}".format(self.numero)
+
+class PeriodoDisciplina(models.Model):
+    Periodo = models.ForeignKey(
+
+        Periodo
+
+    )
+    Disciplina = models.ForeignKey(
+
+        Disciplina
+
+    )
+
+    def __str__(self):
+        return "{}".format(self.Periodo, self.Disciplina)
+    
+class DisciplinaOfertada(models.Model):
+    ano = models.SmallIntegerField(max_length=4)
+    semestre = models.CharField(max_length=1)
+    disciplina = models.ForeignKey(
+
+        Disciplina
+
+    )
+    
+    def __str__(self):
+        return "{}".format(self.ano)
+
+class Turma(models.Model):
+    turma = models.CharField(max_length=100, unique=True)
+    turno = models.CharField(max_length=15)
+    ano = models.SmallIntegerField()
+    semestre = models.CharField(max_length=1)
+    disciplinaofertada = models.ForeignKey(
+
+        DisciplinaOfertada
+
+    )
+    professor = models.ForeignKey(
+
+        Professor
+
+    )
+
+    def __str__(self):
+        return self.turma
+
+class Matricula(models.Model):
+    aluno = models.ForeignKey(
+
+        Aluno
+
+    )
+    turma = models.ForeignKey(
+
+        Turma
+
+    )
+
+    def __str__(self):
+        return "{}".format(self.aluno, self.turma)
+
+class CursoTurma(models.Model):
+    curso = models.ForeignKey(
+
+        Curso
+
+    )
+    turma = models.ForeignKey(
+
+        Turma
+
+    ) 
+
+    def __str__(self):
+        return "{}".format(self.curso, self.turma)
+ 
+class Questao(models.Model):
     class meta:
         db_table="aluno"
     def __unicode__(self):
         return self.nome
         
-class Professor(Usuario):
-    apelido = models.CharField(max_length=50)
-    celular = models.CharField(max_length=11)
-    
-    def __unicode__(self):
-        return self.nome
 class questao(models.Model):
 
     disciplina = models.CharField(max_length=240)
@@ -87,17 +214,22 @@ class questao(models.Model):
     data_limite_entrega = models.DateField()
     descricao = models.TextField()
     data = models.DateField()
+    turma = models.ForeignKey(
 
-class arquivo_questao(questao):
-    
-    arquivo = models.FileField(upload_to='arquivos/')
+        Turma
 
-class disciplina_ofertada(models.Model):
+    )
 
-    nome_disciplina = models.CharField(max_length=240)
-    ano = models.SmallIntegerField()
-    semestre = models.CharField(max_length=1)
+    def __str__(self):
+        return "{}".format(self.numero)
 
-class turma(disciplina_ofertada):
-    turno = models.CharField(max_length=15)
-    ra_professor = models.IntegerField()
+class ArquivoQuestao(models.Model):
+    arquivo = models.CharField(max_length=500)
+    questao = models.ForeignKey(
+
+        Questao
+
+      )
+
+    def __str__(self):
+        return self.arquivo

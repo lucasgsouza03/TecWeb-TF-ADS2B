@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.decorators import login_required, user_passes_tes
 from core.forms import contato_forms, questao_arquivo
-from django.contrib.auth import authenticate, login
 
 # Create your views here.
 
@@ -58,14 +57,17 @@ def questao_forms(request):
     return render(request, "questao_form.html", contexto)
 
 @login_required(login_url='/login')
+
 @user_passes_test(checa_aluno, login_url='aluno.html', redirect_field_name=None)
 def aluno(request):
     return render(request, "aluno.html")
 
 @user_passes_test(checa_professor, login_url='/?error=acesso', redirect_field_name=None)
+
 @login_required(login_url='/login')
 def professor(request):
     contexto = {
         'disciplinas':[{'nome':'tec'},{'nome':'sql'},{'nome':'lp2'}]
     }
     return render(request, "professor.html", contexto)
+

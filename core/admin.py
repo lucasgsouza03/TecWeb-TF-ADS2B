@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from core.models import Curso, Aluno, Professor
+from core.models import Curso, Aluno, Professor, GradeCurricular, Disciplina, Periodo, PeriodoDisciplina, DisciplinaOfertada, Turma, Matricula, CursoTurma, Questao, ArquivoQuestao
 from django import forms
 
 class NovoAlunoForm(forms.ModelForm):
@@ -59,20 +59,74 @@ class AlterarProfessorForm(forms.ModelForm):
 class ProfessorAdmin(UserAdmin):
     form = AlterarProfessorForm
     add_form = NovoProfessorForm
-    list_display = ('nome', 'ra', 'email', 'apelido', 'celular')
+    list_display = ('ra', 'nome', 'email', 'apelido', 'celular')
     list_filter = ('perfil',)
     fieldsets = ( (None, {'fields': ('nome', 'ra', 'email', 'apelido', 'celular')}),)
     add_fieldsets = (
         (None, { 
-            'fields': ('nome', 'ra', 'email', 'apelido', 'celular')
+            'fields': ('ra', 'nome', 'email', 'apelido', 'celular')
+
             }),
     )
     search_fields = ('apelido',)
     ordering = ('apelido',)
     filter_horizontal = ()
 
-# Register your models here.
+class GradeCurricularAdmin(admin.ModelAdmin):
+    list_display = ('ano', 'curso', 'semestre',)
+    list_filter = ('ano','semestre', 'curso',)
+    ordering = ('ano',)
+    
+    
+
+class DisciplinaAdmin(admin.ModelAdmin):
+    list_display =('nome',)
+    list_filter = ('nome',)
+    ordering = ('nome',)
+    
+
+class PeriodoAdmin(admin.ModelAdmin):
+    list_display = ('numero',)
+    list_filter = ('numero',)
+    ordering = ('numero',)
+
+class DisciplinaOfertadaAdmin(admin.ModelAdmin):
+    list_display = ('ano',)
+    list_filter = ('ano',)
+    ordering = ('ano',)
+   
+class TurmaAdmin(admin.ModelAdmin):
+    list_display = ('turno', 'ano', 'semestre',)
+    list_filter = ('turno', 'ano', 'semestre',)
+    ordering = ('turno', 'ano', 'semestre',)
+
+class QuestaoAdmin(admin.ModelAdmin):
+    list_display = ('numero', 'data_limite_entrega', 'descricao', 'data')
+    list_filter = ('numero', 'data_limite_entrega', 'descricao', 'data')
+    ordering = ('numero', 'data_limite_entrega', 'descricao', 'data')
+
+class ArquivoQuestaoAdmin(admin.ModelAdmin):
+    list_display = ('arquivo',)
+    list_filter = ('arquivo',)
+    ordering = ('arquivo',)
+
+class RespostaAdmin(admin.ModelAdmin):
+    list_display = ('data_avaliacao', 'nota', 'avaliacao', 'descricao', 'data_de_envio',)
+    list_filter = ('data_avaliacao', 'nota', 'avaliacao', 'descricao', 'data_de_envio',)
+    ordering = ('data_avaliacao', 'nota', 'avaliacao', 'descricao', 'data_de_envio',)
+
+
+# Register your models here.  
 admin.site.register(Aluno,AlunoAdmin)
 admin.site.register(Curso,CursoAdmin)
 admin.site.register(Professor,ProfessorAdmin)
-
+admin.site.register(GradeCurricular,GradeCurricularAdmin)
+admin.site.register(Disciplina,DisciplinaAdmin)
+admin.site.register(Periodo,PeriodoAdmin)
+admin.site.register(PeriodoDisciplina)
+admin.site.register(DisciplinaOfertada, DisciplinaOfertadaAdmin)
+admin.site.register(Turma,TurmaAdmin)
+admin.site.register(Matricula)
+admin.site.register(CursoTurma)
+admin.site.register(Questao, QuestaoAdmin)
+admin.site.register(ArquivoQuestao,ArquivoQuestaoAdmin)
