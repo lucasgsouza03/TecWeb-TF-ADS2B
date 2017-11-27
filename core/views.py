@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required, user_passes_test
 from core.forms import contato_forms, questao_arquivo
+from core.models import Curso
 
 # Create your views here.
 
@@ -21,7 +22,10 @@ def Contato(request):
 	            }
     return render(request, "Contato.html", contexto)
 def cursos(request):
-    return render(request, "cursos.html")
+    contexto = {
+        "cursos":Curso.objects.all()
+    }
+    return render(request, "cursos.html", contexto)
 def detalhes(request):
     return render(request, "detalhes.html")
 def EsqueciSenha(request):
