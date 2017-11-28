@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'^NovaDisciplina/', NovaDisciplina, name='novadisciplina'),
     url(r'^NovoCadastro/', NovoCadastro, name='novocadastro'),
     url(r'^logout/', logout, name='logout'),
-    url(r'^aluno/$', aluno, name='aluno'),
+    url(r'^aluno/', aluno, name='aluno'),
     url(r'^professor/$', professor, name='professor'),
     url(r'^professor/questao', questao_forms, name='questao_forms'),
 
