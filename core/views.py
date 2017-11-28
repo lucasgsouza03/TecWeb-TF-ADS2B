@@ -34,7 +34,7 @@ def detalhes(request, sigla):
             email = request.POST.get("email")
             cel = request.POST.get("cel")
 	    curs = sigla
-            form.envia_email(assunto, email, cel, curs)
+            form.envia_email(nome, email, cel, curs)
     else:
         form = solicita_matricula()
 	
