@@ -1,65 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 	{% block main %}
-<div>
+<section>
 	<img src="{% static 'TecWeb/css/images/cursos-online.jpg' %}" class="banner" alt="banner">
+</section>
+<section class="box_style detalhes">
+	<h1>{{ curso.nome }}</h1>
+		<article>
+			<h2> {{  curso.nome }} - {{ curso.sigla }} </h2>
+			<div>
+				Tipo: {{ curso.tipo }}<br>
+				Carga horária: {{ curso.carga_horaria }}<br>
+				Descrição: {{ curso.descricao }}<br>
+			</div>
+		</article>
+		<article class="curso_text">
+			<h2>Inscreva-se agora</h2>
+			<form method="POST" action="">
+				{% csrf_token %}
+				<table class="box_style detalhes">
+					<tr>
+						<td>Nome:</td><td><input name="nome"/></td>
+					</tr>
+					<tr>
+						<td>Email:</td><td><input name="email"/></td>
+					</tr>
+					<tr>
+						<td>cel:</td><td><input name="cel"/></td>
+					</tr>
+					<tr>
+						<td><button class="botao2" type="submit" >Inscreva-se</button></td>
+					</tr>
+				</table>
+
+			</article>
+	</form>
 </div>
-
-
-<br>
-<br>  
-
-<div class="grade">
-<h1>Grades<h1>
-
-<h2><table>
-
-
-<th>Gestao em tecnologia da Informacao</th>
-<td>
-<br>
-<td>Banco de Dados
-<td>Comunicação e Expressão
-<td>Internet das Coisas
-<td>Produçao e multimidia
-<td>Matemática Aplicada
-<td>Lógica de Programação
-<td>Linguagem de Programação
-
-</table>
-
-<table>
-
-
-<th>Analise e desenvolvimento de sistemas</th>
-<td>
-<br>
-<td>Banco de Dados
-<td>Comunicação e Expressão
-<td>Internet das Coisas
-<td>Produçao e multimidia
-<td>Matemática Aplicada
-<td>Lógica de Programação
-<td>Linguagem de Programação
-
-</table>
-
-<table>
-
-
-<th>Jogos Digitais</th>
-<td>Empreendedorismo
-<br>Concept Art
-<td>Arte 2D para jogos Digitais
-<td>Introdução a jogos digitais
-<td>Design de jogos 1
-<td>Sociabilidade e sustentabilidade
-<td>Libras
-<td>Introdução à Programação para Jogos digitais
-
-
-</table>
-</h2>
-</div>
-
 {% endblock %}

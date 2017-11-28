@@ -24,8 +24,12 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^index/', index, name='home'),
     url(r'^contato/', Contato, name='contato'),
-    url(r'^cursos/', cursos, name='cursos'),
-    url(r'^detalhes/', detalhes, name='detalhes'),
+
+
+    url(r'^cursos/$', cursos, name='cursos'),
+    url(r'^cursos/(?P<sigla>[A-Z,a-z]+)/detalhes', detalhes, name='detalhes'),
+
+
     url(r'^disciplinas/', disciplinas, name='disciplinas'),
     url(r'^EsqueciSenha/', EsqueciSenha, name='senha'),
     url(r'^noticias/', noticias, name='noticias'),

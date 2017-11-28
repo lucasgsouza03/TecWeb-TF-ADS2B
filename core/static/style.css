@@ -113,6 +113,11 @@ input[type=button], input[type=submit], input[type=reset] {
 	margin: 1% auto;
 	padding: 2%;
 }
+.detalhes{
+	margin: 1% auto;
+	padding: 2%;
+	width: 50%;
+}
 .questao{
 	margin: 1% auto;
 	padding: 2%;
@@ -199,8 +204,14 @@ button.submit{
 	background-color: transparent;
 }
 .curso_box{
-	width: 90%;
+	width: 60%;
 	margin: 1% auto;
+	font-size: 1.7em;
+	
+}
+a {
+	text-decoration: none;
+
 }
 .curso_text{
 	width: 90%;
@@ -222,11 +233,9 @@ h1{
 	font-size: 1.5em;
 	color:#58798f;
 	text-align: center;
-	text-transform: capitalize;
 
 }
 h2 {
-	font-family: Gotham HTF;
 	font-size: 1.3em;
 	color:#fff;
 	text-align: center;
