@@ -108,7 +108,7 @@ class QuestaoAdmin(admin.ModelAdmin):
 class ArquivoQuestaoAdmin(admin.ModelAdmin):
     list_display = ('arquivo',)
     list_filter = ('arquivo',)
-    ordering = ('arquivo',)
+    ordering = ('arquivo', )
 
 class RespostaAdmin(admin.ModelAdmin):
     list_display = ('data_avaliacao', 'nota', 'avaliacao', 'descricao', 'data_de_envio',)

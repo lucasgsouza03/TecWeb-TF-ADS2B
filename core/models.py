@@ -137,11 +137,8 @@ class PeriodoDisciplina(models.Model):
 class DisciplinaOfertada(models.Model):
     ano = models.SmallIntegerField()
     semestre = models.CharField(max_length=1)
-    disciplina = models.ForeignKey(
-
-        Disciplina
-
-    )
+    disciplina = models.ForeignKey(Disciplina)
+    curso = models.ForeignKey(Curso)
     
     def __str__(self):
         return "{}".format(self.ano)
@@ -198,10 +195,10 @@ class CursoTurma(models.Model):
 
 class questao(models.Model):
 
-    disciplina = models.CharField(max_length=240)
+    disciplina = models.ForeignKey(Disciplina)
     ano_ofertado = models.SmallIntegerField()
     semestre_ofertado = models.CharField(max_length=1)
-    id_turma = models.CharField(max_length=1)
+    id_turma = models.ForeignKey(Turma)
     numero = models.IntegerField()
     data_limite_entrega = models.DateField()
     descricao = models.TextField()
