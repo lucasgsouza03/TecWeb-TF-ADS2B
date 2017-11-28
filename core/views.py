@@ -30,7 +30,7 @@ def detalhes(request, sigla):
     if request.POST:
         form = solicita_matricula(request.POST)
         if form.is_valid():
-            assunto = request.POST.get("assunto")
+            nome = request.POST.get("nome")
             email = request.POST.get("email")
             cel = request.POST.get("cel")
 	    curs = sigla
