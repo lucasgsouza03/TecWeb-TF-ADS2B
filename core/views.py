@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required, user_passes_test
-from core.forms import contato_forms, questao_arquivo
+from core.forms import contato_forms, questao_arquivo, solicita_matricula
 from core.models import Curso
 
 # Create your views here.
@@ -27,12 +27,23 @@ def cursos(request):
     }
     return render(request, "cursos.html", contexto)
 def detalhes(request, sigla):
+    if request.POST:
+        form = solicita_matricula(request.POST)
+        if form.is_valid():
+            assunto = request.POST.get("assunto")
+            email = request.POST.get("email")
+            cel = request.POST.get("cel")
+            form.envia_email(assunto, email, cel, curs)
+    else:
+        form = solicita_matricula()
 	
     curso = Curso.objects.get(sigla=sigla)
     contexto = {
-        "curso": curso
+        "curso": curso,
+	"form": form
     }
     return render(request, "detalhes.html", contexto)
+
 def EsqueciSenha(request):
     return render(request, "EsqueciSenha.html")
 def noticias(request):
