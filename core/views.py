@@ -56,7 +56,7 @@ def NovoCadastro(request):
 def disciplinas(request):
     cursos = Disciplina.objects.all()
     contexto = { "cursos":cursos}
-    return render(request, "disciplinas.html")
+    return render(request, "disciplinas.html", contexto)
 
 def login(request):
     return render(request, "login.html")
