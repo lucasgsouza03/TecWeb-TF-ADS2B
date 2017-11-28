@@ -8,7 +8,7 @@
 			<h1>Disciplinas</h1>
 			{% for curso in cursos %}
 				<article class="curso_text">
-					<a href="{% url 'detalhes' sigla=curso.sigla %}"><h2> {{  curso.nome }} - {{ curso.sigla }} </h2></a>
+					<h2> {{  curso.nome }} - {{ curso.sigla }} </h2>
                 		</article>
 			{% endfor %}
 		</section>
