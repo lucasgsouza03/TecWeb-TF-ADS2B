@@ -118,13 +118,12 @@ input[type=button], input[type=submit], input[type=reset] {
 	padding: 2%;
 }
 button{
-	background-color: #58798f;
-	border-radius: 8%;
+	background-color: transparent;
 	color:#FFF;
 	text-shadow: 1px 1px 1px #000;
 }
 button.login{
-	font-family: Times New Roman, serif;
+	font-family: Helvetica;
 	font-size:1em;
 	margin: 5% auto;
 	margin-right: 5%;
@@ -132,6 +131,7 @@ button.login{
 	height:30px;
 }
 button.submit{
+	background-color:#041e43;
 	font-family: Times New Roman, serif;
 	font-size:1em;
 }
