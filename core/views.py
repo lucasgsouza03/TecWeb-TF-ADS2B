@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required, user_passes_test
 from core.forms import contato_forms, questao_arquivo, solicita_matricula
-from core.models import Curso
+from core.models import Curso, Disciplina
 
 # Create your views here.
 
@@ -54,6 +54,8 @@ def NovaDisciplina(request):
 def NovoCadastro(request):
     return render(request, "NovoCadastro.html")
 def disciplinas(request):
+    cursos = Disciplina.objects.all()
+    contexto = { "cursos":cursos}
     return render(request, "disciplinas.html")
 
 def login(request):
