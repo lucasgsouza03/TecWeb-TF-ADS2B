@@ -16,7 +16,7 @@ class contato_forms(forms.Form):
 
 class solicita_matricula(forms.Form):
     nome = forms.CharField()
-    cel = forms.CharField(max_length=11)
+    cel = forms.CharField()
     email = forms.EmailField()
     
     def envia_email(self, nome, email, cel, curs):
