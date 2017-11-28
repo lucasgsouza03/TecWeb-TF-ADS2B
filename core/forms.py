@@ -21,7 +21,7 @@ class solicita_matricula(forms.Form):
     
     def envia_email(self, nome, email, cel, curs):
         assunto  = "Solicitação de matricula"
-        mensagem = "Informações\nNome: {}\nE-mail: {}\nTelefone: {}\nCurso desejado: {}".format(nome, email, cel, curs)
+        mensagem = "Informações  Nome: {} E-mail: {}  Telefone: {} Curso desejado: {}".format(nome, email, cel, curs)
         email = ['lucasgdesouza03@gmail.com']
         send_mail(assunto, mensagem, EMAIL_HOST_USER, email, fail_silently=True)
 
