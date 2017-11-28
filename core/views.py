@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required, user_passes_test
-from core.forms import contato_forms, questao_arquivo, solicita_matricula
+from core.forms import contato_forms, questao_arquivo, solicita_matricula-
 from core.models import Curso
 
 # Create your views here.
